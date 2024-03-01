@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.HeroesAbilities
 {
     [UsedImplicitly]
-    public class RandomTarget : BaseAbility
+    public sealed class RandomTarget : BaseAbility
     {
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)
         {

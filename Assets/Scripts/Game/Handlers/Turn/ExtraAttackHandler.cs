@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class ExtraAttackHandler : BaseHandler<ExtraAttackEvent>
+    public sealed class ExtraAttackHandler : BaseHandler<ExtraAttackEvent>
     {
         public ExtraAttackHandler(EventBus eventBus) : base(eventBus)
         {

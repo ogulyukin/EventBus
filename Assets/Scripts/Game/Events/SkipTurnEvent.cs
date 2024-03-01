@@ -1,7 +1,7 @@
 
 namespace Game.Events
 {
-    public class SkipTurnEvent : IEvent
+    public readonly struct SkipTurnEvent : IEvent
     {
         public readonly EntityConfig TargetEntity;
 

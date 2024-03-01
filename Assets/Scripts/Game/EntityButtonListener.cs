@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Game
 {
-    public class EntityButtonListener : MonoBehaviour
+    public sealed class EntityButtonListener : MonoBehaviour
     {
         [SerializeField] private HeroListView heroListView;
         [SerializeField] private Button entityButton;

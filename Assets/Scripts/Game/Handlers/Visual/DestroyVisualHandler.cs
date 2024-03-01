@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public class DestroyVisualHandler : BaseHandler<DestroyEvent>
+    public sealed class DestroyVisualHandler : BaseHandler<DestroyEvent>
     {
         private readonly VisualPipeline _visualPipeline;
         

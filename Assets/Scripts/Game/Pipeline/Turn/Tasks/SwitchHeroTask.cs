@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Pipeline.Turn.Tasks
 {
     [UsedImplicitly]
-    public class SwitchHeroTask : PipelineTask
+    public sealed class SwitchHeroTask : PipelineTask
     {
         private readonly EventBus _eventBus;
         private readonly EntityStorage _entityStorage;
@@ -42,6 +42,7 @@ namespace Game.Pipeline.Turn.Tasks
             
             _eventBus.RaiseEvent(new ActivateEntity(_currentEntity.Value));
             _eventBus.RaiseEvent(new DeactivateEntityEvent(previousEntity));
+            _eventBus.RaiseEvent(new SwitchHeroEvent(_currentEntity.Value));
             Finish();
         }
     }

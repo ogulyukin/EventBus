@@ -11,7 +11,7 @@ using Zenject;
 
 namespace DI
 {
-    public class SceneInstaller : MonoInstaller
+    public sealed class SceneInstaller : MonoInstaller
     {
         [SerializeField] private TurnPipelineRunner turnPipelineRunner;
         public override void InstallBindings()
@@ -69,6 +69,8 @@ namespace DI
             Container.BindInterfacesAndSelfTo<DeactivateEntityVisualHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<StartTurnVisualHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<HealVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SwitchHeroVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AbilityUsedVisualHandler>().AsSingle();
             
             //Complex Tasks
             Container.Bind<StartVisualPipelineTask>().AsSingle();

@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.HeroesAbilities
 {
     [UsedImplicitly]
-    public class FrozeEnemy : BaseAbility
+    public sealed class FrozeEnemy : BaseAbility
     {
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)
         {

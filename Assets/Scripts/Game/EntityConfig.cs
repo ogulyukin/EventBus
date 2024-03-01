@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class EntityConfig : MonoBehaviour
+    public sealed class EntityConfig : MonoBehaviour
     {
         [SerializeField] private int health;
         [SerializeField] private int damage;

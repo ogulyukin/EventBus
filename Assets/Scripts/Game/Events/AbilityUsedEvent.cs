@@ -1,10 +1,11 @@
+
 namespace Game.Events
 {
-    public readonly struct DisableStrikeBackEvent : IEvent
+    public readonly struct AbilityUsedEvent : IEvent
     {
         public readonly EntityConfig TargetEntity;
 
-        public DisableStrikeBackEvent(EntityConfig targetEntity)
+        public AbilityUsedEvent(EntityConfig targetEntity)
         {
             TargetEntity = targetEntity;
         }

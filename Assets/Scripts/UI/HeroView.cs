@@ -60,6 +60,8 @@ namespace UI
 
         [SerializeField] private VfxView vfxView;
 
+        [SerializeField] private Audio heroAudio;
+
         private Sequence attackAnimation;
 
         private AudioPlayer audioPlayer;
@@ -121,6 +123,11 @@ namespace UI
         public void Heal()
         {
             vfxView.Play();
+        }
+
+        public Audio GetHeroAudio()
+        {
+            return heroAudio;
         }
     }
 }

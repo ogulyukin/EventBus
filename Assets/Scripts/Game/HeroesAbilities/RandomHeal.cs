@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.HeroesAbilities
 {
-    public class RandomHeal : BaseAbility
+    public sealed class RandomHeal : BaseAbility
     {
         [ShowInInspector] private int _healAmount = 1;
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)

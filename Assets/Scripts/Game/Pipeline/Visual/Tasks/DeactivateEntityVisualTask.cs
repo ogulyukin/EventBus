@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 namespace Game.Pipeline.Visual.Tasks
 {
     
-    public class DeactivateEntityVisualTask : PipelineTask
+    public sealed class DeactivateEntityVisualTask : PipelineTask
     {
         private readonly EntityConfig _sourceEntity;
 

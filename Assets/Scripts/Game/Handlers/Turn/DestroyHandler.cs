@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class DestroyHandler : BaseHandler<DestroyEvent>
+    public sealed class DestroyHandler : BaseHandler<DestroyEvent>
     {
         public DestroyHandler(EventBus eventBus) : base(eventBus)
         {

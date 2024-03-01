@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public class ActivateEntityVisualHandler : BaseHandler<ActivateEntity>
+    public sealed class ActivateEntityVisualHandler : BaseHandler<ActivateEntity>
     {
         private readonly VisualPipeline _visualPipeline;
         

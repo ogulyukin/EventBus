@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class HealHandler : BaseHandler<HealEvent>
+    public sealed class HealHandler : BaseHandler<HealEvent>
     {
         public HealHandler(EventBus eventBus) : base(eventBus)
         {

@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public class StartTurnVisualHandler : BaseHandler<StartTurnEvent>
+    public sealed class StartTurnVisualHandler : BaseHandler<StartTurnEvent>
     {
         public StartTurnVisualHandler(EventBus eventBus) : base(eventBus)
         {

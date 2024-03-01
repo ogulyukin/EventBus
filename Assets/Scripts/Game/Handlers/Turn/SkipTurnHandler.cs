@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class SkipTurnHandler : BaseHandler<SkipTurnEvent>
+    public sealed class SkipTurnHandler : BaseHandler<SkipTurnEvent>
     {
         public SkipTurnHandler(EventBus eventBus) : base(eventBus)
         {

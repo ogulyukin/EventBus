@@ -1,9 +1,10 @@
+using Game.Events;
 using JetBrains.Annotations;
 
 namespace Game.Pipeline.Turn.Tasks
 {
     [UsedImplicitly]
-    public class GlobalAbilityTask : PipelineTask
+    public sealed class GlobalAbilityTask : PipelineTask
     {
         private readonly CurrentEntity _currentEntity;
         private readonly AttackedEntity _attackedEntity;
@@ -34,6 +35,7 @@ namespace Game.Pipeline.Turn.Tasks
         {
             if (entity.TryGetGlobalAbility(out var ability))
             {
+                _eventBus.RaiseEvent(new AbilityUsedEvent(entity));
                 var tempCurrentEntity = new CurrentEntity() {Value = entity};
                 ability.Run(_eventBus, tempCurrentEntity, _attackedEntity, _entityStorage);
             }

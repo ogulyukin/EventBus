@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.Pipeline.Turn.Tasks
 {
     [UsedImplicitly]
-    public class StrikeBackTask : PipelineTask
+    public sealed class StrikeBackTask : PipelineTask
     {
         private readonly EventBus _eventBus;
         private readonly CurrentEntity _currentEntity;

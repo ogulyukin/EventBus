@@ -1,6 +1,6 @@
 namespace Game.Pipeline.Visual.Tasks
 {
-    public class ActivateEntityVisualTask : PipelineTask
+    public sealed class ActivateEntityVisualTask : PipelineTask
     {
         private readonly EntityConfig _sourceEntity;
 

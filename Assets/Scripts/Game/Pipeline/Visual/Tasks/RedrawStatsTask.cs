@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Pipeline.Visual.Tasks
 {
-    public class RedrawStatsTask : PipelineTask
+    public sealed class RedrawStatsTask : PipelineTask
     {
         private readonly EntityConfig _entity;
 

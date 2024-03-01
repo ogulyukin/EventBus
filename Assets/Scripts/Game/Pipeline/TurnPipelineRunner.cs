@@ -1,4 +1,3 @@
-using System;
 using Game.Pipeline.Turn;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -6,7 +5,7 @@ using Zenject;
 
 namespace Game.Pipeline
 {
-    public class TurnPipelineRunner : MonoBehaviour
+    public sealed class TurnPipelineRunner : MonoBehaviour
     {
         [SerializeField] private bool runOnStart = true;
         [SerializeField] private bool runOnFinish = true;

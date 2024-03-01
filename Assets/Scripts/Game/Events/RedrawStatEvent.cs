@@ -1,6 +1,6 @@
 namespace Game.Events
 {
-    public class RedrawStatEvent : IEvent
+    public readonly struct RedrawStatEvent : IEvent
     {
         public readonly EntityConfig Entity;
 

@@ -1,6 +1,6 @@
 namespace Game.Events
 {
-    public class StartTurnEvent : IEvent
+    public readonly struct StartTurnEvent : IEvent
     {
         public readonly int Turn;
 

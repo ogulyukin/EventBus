@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class DisableStrikeBackHandler : BaseHandler<DisableStrikeBackEvent>
+    public sealed class DisableStrikeBackHandler : BaseHandler<DisableStrikeBackEvent>
     {
         public DisableStrikeBackHandler(EventBus eventBus) : base(eventBus)
         {

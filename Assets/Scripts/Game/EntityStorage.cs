@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UI;
-using UnityEngine;
 
 namespace Game
 {
@@ -46,7 +45,6 @@ namespace Game
             for (int i = 0; i < tries; i++)
             {
                 GetNextEntityIndex(team);
-                //Debug.Log($"Current index {_currentIndexes[team]} of {team}. Total Ent: {_entities[team].Count}");
                 var entity = _entities[team][_currentIndexes[team]];
                 if (!entity.IsDead)
                 {

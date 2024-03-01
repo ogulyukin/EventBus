@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Events
 {
-    public class DeactivateEntityEvent : IEvent
+    public readonly struct DeactivateEntityEvent : IEvent
     {
         public readonly EntityConfig Entity;
 

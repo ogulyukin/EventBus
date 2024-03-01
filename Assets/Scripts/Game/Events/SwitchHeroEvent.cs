@@ -1,11 +1,10 @@
-
 namespace Game.Events
 {
-    public readonly struct ActivateEntity : IEvent
+    public readonly struct SwitchHeroEvent : IEvent
     {
         public readonly EntityConfig Entity;
 
-        public ActivateEntity(EntityConfig entity)
+        public SwitchHeroEvent(EntityConfig entity)
         {
             Entity = entity;
         }

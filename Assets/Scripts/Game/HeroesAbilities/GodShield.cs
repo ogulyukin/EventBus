@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 namespace Game.HeroesAbilities
 {
     [UsedImplicitly]
-    public class GodShield : BaseAbility
+    public sealed class GodShield : BaseAbility
     {
         private bool _isUsed;
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)

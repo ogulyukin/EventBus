@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.HeroesAbilities
 {
     [UsedImplicitly]
-    public class HealthDrain : BaseAbility
+    public sealed class HealthDrain : BaseAbility
     {
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)
         {

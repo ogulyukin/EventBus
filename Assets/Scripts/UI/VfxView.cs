@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class VfxView : MonoBehaviour
+    public sealed class VfxView : MonoBehaviour
     {
         [SerializeField] private ParticleSystem system;
 

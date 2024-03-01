@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public class RedrawStatsVisualHandler : BaseHandler<RedrawStatEvent>
+    public sealed class RedrawStatsVisualHandler : BaseHandler<RedrawStatEvent>
     {
         private readonly VisualPipeline _visualPipeline;
         

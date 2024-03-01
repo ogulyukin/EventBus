@@ -1,6 +1,6 @@
 namespace Game.Events
 {
-    public class HealEvent : IEvent
+    public readonly struct HealEvent : IEvent
     {
         public readonly EntityConfig TargetEntity;
         public readonly int HealAmount;

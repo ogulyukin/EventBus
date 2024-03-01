@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Game.Pipeline.Turn.Tasks
 {
     [UsedImplicitly]
-    public class StartGameTask : PipelineTask
+    public sealed class StartGameTask : PipelineTask
     {
         private bool _gameStarted;
         private readonly EventBus _eventBus;

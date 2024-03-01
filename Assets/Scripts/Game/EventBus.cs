@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Game
 {
     [UsedImplicitly]
-    public class EventBus
+    public sealed class EventBus
     {
         private readonly Dictionary<Type, IEventHandlerCollection> _handlers = new();
 

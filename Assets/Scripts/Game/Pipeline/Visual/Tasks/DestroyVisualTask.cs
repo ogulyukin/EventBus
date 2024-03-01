@@ -1,8 +1,7 @@
-using UnityEngine;
 
 namespace Game.Pipeline.Visual.Tasks
 {
-    public class DestroyVisualTask : PipelineTask
+    public sealed class DestroyVisualTask : PipelineTask
     {
         private readonly EntityConfig _targetEntity;
 
@@ -13,8 +12,9 @@ namespace Game.Pipeline.Visual.Tasks
 
         protected override void OnRun()
         {
-            _targetEntity.View.gameObject.SetActive(false);
             _targetEntity.IsDead = true;
+            _targetEntity.View.GetHeroAudio().PlayDeath();
+            _targetEntity.gameObject.SetActive(false);
             Finish();
         }
     }

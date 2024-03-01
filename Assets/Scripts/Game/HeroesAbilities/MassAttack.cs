@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 namespace Game.HeroesAbilities
 {
     [UsedImplicitly]
-    public class MassAttack : BaseAbility
+    public sealed class MassAttack : BaseAbility
     {
         [ShowInInspector] private int _damage = 1;
         public override void Run(EventBus eventBus, CurrentEntity currentEntity, AttackedEntity attackedEntity, EntityStorage entityStorage)

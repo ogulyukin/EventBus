@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Handlers.Turn
 {
     [UsedImplicitly]
-    public class DealDamageHandler : BaseHandler<DealDamageEvent>
+    public sealed class DealDamageHandler : BaseHandler<DealDamageEvent>
     {
         public DealDamageHandler(EventBus eventBus) : base(eventBus)
         {

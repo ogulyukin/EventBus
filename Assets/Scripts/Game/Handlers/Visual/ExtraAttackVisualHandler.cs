@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public class ExtraAttackVisualHandler : BaseHandler<ExtraAttackEvent>
+    public sealed class ExtraAttackVisualHandler : BaseHandler<ExtraAttackEvent>
     {
         private readonly VisualPipeline _visualPipeline;
         

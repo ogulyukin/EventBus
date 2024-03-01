@@ -1,10 +1,11 @@
+using Game.Events;
 using JetBrains.Annotations;
 
 
 namespace Game.Pipeline.Turn.Tasks
 {
     [UsedImplicitly]
-    public class BeforeAttackAbilityTask : PipelineTask
+    public sealed class BeforeAttackAbilityTask : PipelineTask
     {
         
         private readonly CurrentEntity _currentEntity;
@@ -24,6 +25,7 @@ namespace Game.Pipeline.Turn.Tasks
         {
             if (_currentEntity.Value.TryGetBeforeAttackAbility(out var ability))
             {
+                _eventBus.RaiseEvent(new AbilityUsedEvent(_currentEntity.Value));
                 ability.Run(_eventBus, _currentEntity, _attackedEntity, _entityStorage);
             }
             Finish();

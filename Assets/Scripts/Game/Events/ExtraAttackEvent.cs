@@ -1,7 +1,7 @@
 
 namespace Game.Events
 {
-    public class ExtraAttackEvent : IEvent
+    public readonly struct ExtraAttackEvent : IEvent
     {
         public readonly EntityConfig SourceEntity;
         public readonly EntityConfig TargetEntity;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.HeroesAbilities
 {
-    public class SingleRandomAttack : BaseAbility
+    public sealed class SingleRandomAttack : BaseAbility
     {
         [ShowInInspector] private int _damage = 3;
         

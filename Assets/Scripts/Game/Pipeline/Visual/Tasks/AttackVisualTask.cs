@@ -1,7 +1,7 @@
 
 namespace Game.Pipeline.Visual.Tasks
 {
-    public sealed  class AttackVisualTask : PipelineTask
+    public sealed class AttackVisualTask : PipelineTask
     {
         private readonly EntityConfig _sourceEntity;
         private readonly EntityConfig _targetEntity;

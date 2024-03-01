@@ -7,18 +7,18 @@ using JetBrains.Annotations;
 namespace Game.Handlers.Visual
 {
     [UsedImplicitly]
-    public sealed class HealVisualHandler : BaseHandler<HealEvent>
+    public sealed class SwitchHeroVisualHandler : BaseHandler<SwitchHeroEvent>
     {
         private readonly VisualPipeline _visualPipeline;
-        
-        public HealVisualHandler(EventBus eventBus, VisualPipeline visualPipeline) : base(eventBus)
+
+        public SwitchHeroVisualHandler(EventBus eventBus, VisualPipeline visualPipeline) : base(eventBus)
         {
             _visualPipeline = visualPipeline;
         }
 
-        protected override void HandleEvent(HealEvent evt)
+        protected override void HandleEvent(SwitchHeroEvent evt)
         {
-            _visualPipeline.AddTask(new HealVisualTask(evt.TargetEntity));
+            _visualPipeline.AddTask(new SwitchHeroVisualTask(evt.Entity));
         }
     }
 }
