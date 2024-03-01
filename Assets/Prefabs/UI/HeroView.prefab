@@ -163,7 +163,9 @@ GameObject:
   - component: {fileID: 383512545093365541}
   - component: {fileID: 383512545093365543}
   - component: {fileID: 383512545093365542}
-  - component: {fileID: 383512545093365560}
+  - component: {fileID: 2309213462716970167}
+  - component: {fileID: 3849034897957389487}
+  - component: {fileID: 5210940027010374250}
   m_Layer: 5
   m_Name: Portrait
   m_TagString: Untagged
@@ -231,7 +233,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &383512545093365560
+--- !u!114 &2309213462716970167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,7 +252,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -275,6 +277,38 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3849034897957389487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383512545093365540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057ac0292ed65945a8e325ebe9810119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  damage: 0
+  team: 0
+  name: 
+  view: {fileID: 8763992113062683896}
+--- !u!114 &5210940027010374250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383512545093365540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0892290703b3d0313ab150b1c720017a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroListView: {fileID: 0}
+  entityButton: {fileID: 2309213462716970167}
+  entity: {fileID: 3849034897957389487}
 --- !u!1 &383512545514860528
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroImage: {fileID: 383512544197517689}
   stats: {fileID: 383512545822542961}
-  button: {fileID: 383512545093365560}
+  button: {fileID: 2309213462716970167}
   activeImage: {fileID: 383512545093365542}
   activeIcon: {fileID: 21300000, guid: 84bcba0cb789e481e8babd439c92edec, type: 3}
   inactiveIcon: {fileID: 21300000, guid: 758049b70da174878bc8ec6c1a5d4820, type: 3}

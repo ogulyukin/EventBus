@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace UI
 {
-    [RequireComponent(typeof(Canvas))]
+    //[RequireComponent(typeof(Canvas))]
     public sealed class HeroListView : MonoBehaviour
     {
-        private const int FORWARD_LAYER = 10;
-        private const int BACK_LAYER = 0;
+        //private const int FORWARD_LAYER = 10;
+        //private const int BACK_LAYER = 0;
 
         public event Action<HeroView> OnHeroClicked;
 
         [SerializeField]
         private HeroView[] views;
 
-        private Canvas canvas;
+        //private Canvas _canvas;
 
         private void Awake()
         {
-            this.canvas = this.GetComponent<Canvas>();
+            //this._canvas = this.GetComponent<Canvas>();
         }
 
         private void OnEnable()
@@ -56,7 +56,7 @@ namespace UI
 
         public void SetActive(bool isActive)
         {
-            this.canvas.sortingOrder = isActive ? FORWARD_LAYER : BACK_LAYER;
+            //this._canvas.sortingOrder = isActive ? FORWARD_LAYER : BACK_LAYER;
         }
     }
 }
