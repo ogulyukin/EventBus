@@ -58,6 +58,8 @@ namespace UI
         [SerializeField]
         private AudioClip punchSFX;
 
+        [SerializeField] private VfxView vfxView;
+
         private Sequence attackAnimation;
 
         private AudioPlayer audioPlayer;
@@ -113,6 +115,12 @@ namespace UI
                 });
 
             return tcs.Task;
+        }
+
+        [Sirenix.OdinInspector.Button]
+        public void Heal()
+        {
+            vfxView.Play();
         }
     }
 }

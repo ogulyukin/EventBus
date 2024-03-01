@@ -5,7 +5,7 @@ namespace Game.Pipeline
     public abstract class PipelineTask
     {
         private Action _callback;
-        
+
         public void Run(Action callback)
         {
             _callback = callback;

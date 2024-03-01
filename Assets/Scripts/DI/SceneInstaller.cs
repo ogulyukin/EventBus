@@ -42,9 +42,9 @@ namespace DI
             Container.BindInterfacesAndSelfTo<SkipTurnHandler>().AsSingle();
 
             //Complex Tasks
-            Container.Bind<StartTurnTask>().AsSingle().NonLazy();
-            Container.Bind<PlayerTurnTask>().AsSingle().NonLazy();
-            Container.Bind<StartGameTask>().AsSingle().NonLazy();
+            Container.Bind<StartTurnTask>().AsSingle();
+            Container.Bind<PlayerTurnTask>().AsSingle();
+            Container.Bind<StartGameTask>().AsSingle();
             Container.Bind<StrikeBackTask>().AsSingle();
             Container.Bind<EndTurnAbilityTask>().AsSingle();
             Container.Bind<AfterStrikeBackAbilityTask>().AsSingle();
@@ -64,9 +64,11 @@ namespace DI
             Container.BindInterfacesAndSelfTo<DestroyVisualHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<DealDamageVisualHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<ExtraAttackVisualHandler>().AsSingle();
-            Container.BindInterfacesAndSelfTo<RedrawStatsVisualHandler>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<ActivateEntityVisualHandler>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<DeactivateEntityVisualHandler>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<RedrawStatsVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ActivateEntityVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DeactivateEntityVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartTurnVisualHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<HealVisualHandler>().AsSingle();
             
             //Complex Tasks
             Container.Bind<StartVisualPipelineTask>().AsSingle();
