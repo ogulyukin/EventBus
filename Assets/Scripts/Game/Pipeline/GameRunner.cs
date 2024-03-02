@@ -13,6 +13,7 @@ namespace Game.Pipeline
         [SerializeField] private CanvasView gameCanvasView;
         [SerializeField] private StartGameButtonListener startGameButtonListener;
         [SerializeField] private ExitGameButtonListener exitGameButtonListener;
+        [SerializeField] private ExitGameButtonListener inGameExitButtonListener;
 
         private TurnPipeline _turnPipeline;
 
@@ -43,6 +44,7 @@ namespace Game.Pipeline
             _turnPipeline.OnFinished += OnTurnPipelineFinished;
             startGameButtonListener.AddListener(Run);
             exitGameButtonListener.AddListener(Exit);
+            inGameExitButtonListener.AddListener(Exit);
         }
 
         private void OnDisable()
@@ -50,6 +52,7 @@ namespace Game.Pipeline
             _turnPipeline.OnFinished -= OnTurnPipelineFinished;
             startGameButtonListener.RemoveListener(Run);
             exitGameButtonListener.RemoveListener(Exit);
+            inGameExitButtonListener.RemoveListener(Exit);
         }
 
         [Button]
