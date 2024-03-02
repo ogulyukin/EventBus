@@ -7,21 +7,22 @@ namespace Game.Pipeline.Turn.Tasks
     public sealed class EndTurnTask : PipelineTask
     {
         private readonly EntityStorage _entityStorage;
-        private readonly TurnPipelineRunner _turnPipelineRunner;
+        private readonly GameRunner _gameRunner;
+        private readonly StartGameTask _startGameTask;
 
-        public EndTurnTask(EntityStorage entityStorage, TurnPipelineRunner turnPipelineRunner)
+        public EndTurnTask(EntityStorage entityStorage, GameRunner gameRunner, StartGameTask startGameTask)
         {
             _entityStorage = entityStorage;
-            _turnPipelineRunner = turnPipelineRunner;
+            _gameRunner = gameRunner;
+            _startGameTask = startGameTask;
         }
 
         protected override void OnRun()
         {
-            Debug.Log("Turn Ended");
             if (!_entityStorage.HasAliveHeroes(true) || !_entityStorage.HasAliveHeroes(false))
             {
-                _turnPipelineRunner.StopTurnPipeline();
-                Debug.Log("Game Over!!!");
+                _gameRunner.StopTurnPipeline();
+                _startGameTask.ResetGameStart();
             }
             Finish();
         }

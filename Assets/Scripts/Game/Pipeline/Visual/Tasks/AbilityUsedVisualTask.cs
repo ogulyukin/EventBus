@@ -10,9 +10,9 @@ namespace Game.Pipeline.Visual.Tasks
             _targetEntity = targetEntity;
         }
 
-        protected override void OnRun()
+        protected override async void OnRun()
         {
-            _targetEntity.View.GetHeroAudio().PlayAbility();
+            await _targetEntity.View.GetHeroAudio().PlayAbility();
             Finish();
         }
     }

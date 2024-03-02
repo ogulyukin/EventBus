@@ -7,13 +7,14 @@ using Game.Pipeline.Turn.Tasks;
 using Game.Pipeline.Visual;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace DI
 {
     public sealed class SceneInstaller : MonoInstaller
     {
-        [SerializeField] private TurnPipelineRunner turnPipelineRunner;
+        [FormerlySerializedAs("turnPipelineRunner")] [SerializeField] private GameRunner gameRunner;
         public override void InstallBindings()
         {
             Container.Bind<EventBus>().AsSingle();
@@ -30,7 +31,7 @@ namespace DI
         {
             Container.Bind<TurnPipeline>().AsSingle();
             Container.BindInterfacesAndSelfTo<TurnPipelineInstaller>().AsSingle();
-            Container.Bind<TurnPipelineRunner>().FromInstance(turnPipelineRunner);
+            Container.Bind<GameRunner>().FromInstance(gameRunner);
             
             //Register Handlers
             Container.BindInterfacesAndSelfTo<AttackHandler>().AsSingle();

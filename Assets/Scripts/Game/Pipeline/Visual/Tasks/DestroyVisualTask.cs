@@ -10,10 +10,10 @@ namespace Game.Pipeline.Visual.Tasks
             _targetEntity = targetEntity;
         }
 
-        protected override void OnRun()
+        protected override async void OnRun()
         {
             _targetEntity.IsDead = true;
-            _targetEntity.View.GetHeroAudio().PlayDeath();
+            await _targetEntity.View.GetHeroAudio().PlayDeath();
             _targetEntity.gameObject.SetActive(false);
             Finish();
         }

@@ -22,6 +22,11 @@ namespace Game.Pipeline.Turn.Tasks
             _startVisualPipelineTask = startVisualPipelineTask;
         }
 
+        public void ResetGameStart()
+        {
+            _gameStarted = false;
+        }
+
         protected override void OnRun()
         {
             if (_gameStarted)
@@ -33,14 +38,30 @@ namespace Game.Pipeline.Turn.Tasks
             var entities = new List<EntityConfig>();
             entities.AddRange(_entityStorage.GetTeam(true));
             entities.AddRange(_entityStorage.GetTeam(false));
+            ResetEntities(entities);
             foreach (var entity in entities)
             {
                 _eventBus.RaiseEvent(new RedrawStatEvent(entity));
             }
 
+            if (_currentEntity.Value != null)
+            {
+                _eventBus.RaiseEvent(new DeactivateEntityEvent(_currentEntity.Value));
+            }
             _currentEntity.Value = _entityStorage.GetStartEntity();
+            _eventBus.RaiseEvent(new ActivateEntity(_currentEntity.Value));
             _gameStarted = true;
             _startVisualPipelineTask.Run(Finish);
+        }
+
+        private void ResetEntities(List<EntityConfig> entities)
+        {
+            foreach (var entity in entities)
+            {
+                entity.CurrentHealth = entity.Health;
+                entity.IsDead = false;
+                entity.gameObject.SetActive(true);
+            }
         }
     }
 }

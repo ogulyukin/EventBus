@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace UI
@@ -8,26 +10,32 @@ namespace UI
         [SerializeField] private AudioSource lowHealthClip;
         [SerializeField] private AudioSource abilityClip;
         [SerializeField] private AudioSource deathClip;
+        public async Task PlayStatTurn()
+        {
+            await PlaySound(startTurnClip);
+        }
+        
+        public async Task PlayLowHealth()
+        {
+            await PlaySound(lowHealthClip);
+        }
+        
+        public async Task PlayAbility()
+        {
+            await PlaySound(abilityClip);
+        }
+        
+        public async Task PlayDeath()
+        {
+            await PlaySound(deathClip);
+        }
 
-        public void PlayStatTurn()
+        private async Task PlaySound(AudioSource source)
         {
-            startTurnClip.Play();
+            source.Play();
+            if(source.clip == null)
+                return;
+            await Task.Delay(TimeSpan.FromSeconds(source.clip.length));
         }
-        
-        public void PlayLowHealth()
-        {
-            lowHealthClip.Play();
-        }
-        
-        public void PlayAbility()
-        {
-            abilityClip.Play();
-        }
-        
-        public void PlayDeath()
-        {
-            deathClip.Play();
-        }
-        
     }
 }
